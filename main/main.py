@@ -1,13 +1,15 @@
-from flask import Flask, request, abort 
-from json import dumps, loads 
-from utils.script import get_module_data
-from redis import Redis 
+from json import dumps, loads
 
-from main.config import config 
-from utils.constants import CACHE_TIMEOUT, HOST, PORT, DB 
+from flask import Flask, abort, request
+from redis import Redis
+from utils.constants import CACHE_TIMEOUT, DB, HOST, PORT
+from utils.script import get_module_data
+
+from main.config import CONFIG
 
 app = Flask(__name__)
-cache = Redis(host=config[HOST], port=config[PORT], db=config[DB])
+cache = Redis(host=CONFIG[HOST], port=CONFIG[PORT], db=CONFIG[DB])
+
 
 @app.route('/', methods=["GET"])
 def get_module():
@@ -21,7 +23,7 @@ def get_module():
 
     result = get_module_data(module_code.upper())
 
-    if result is None: 
+    if result is None:
         return dumps({
             "message": "Module not found"
         })

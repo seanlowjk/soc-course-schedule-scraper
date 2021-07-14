@@ -1,19 +1,20 @@
-from json import dumps 
+from json import dumps
 
 from utils.constants import DEFAULT_INDENT
 
-class LessonData: 
-    def __init__(self):
-        self.module_code = None 
-        self.module_name = None 
-        self.modular_credits = None 
-        self.semester_one_info = None 
-        self.semester_two_info = None 
 
-    def add_module_code(self, module_code): 
+class LessonData:
+    def __init__(self):
+        self.module_code = None
+        self.module_name = None
+        self.modular_credits = None
+        self.semester_one_info = None
+        self.semester_two_info = None
+
+    def add_module_code(self, module_code):
         self.module_code = module_code
 
-    def add_module_name(self, module_name): 
+    def add_module_name(self, module_name):
         self.module_name = module_name
 
     def add_modular_credits(self, modular_credits):
@@ -25,24 +26,24 @@ class LessonData:
     def add_semester_two_info(self, semester_two_info):
         self.semester_two_info = semester_two_info
 
-    def to_json(self): 
+    def to_json(self):
         result = {
-            "module_code": self.module_code, 
-            "module_name": self.module_name, 
-            "modular_credits": self.modular_credits, 
+            "module_code": self.module_code,
+            "module_name": self.module_name,
+            "modular_credits": self.modular_credits,
             "semesters": {},
         }
 
-        if self.semester_one_info is not None: 
+        if self.semester_one_info is not None:
             result["semesters"]["1"] = self.semester_one_info
 
-        if self.semester_two_info is not None: 
+        if self.semester_two_info is not None:
             result["semesters"]["2"] = self.semester_two_info
 
         return dumps(result, indent=DEFAULT_INDENT)
 
 
-class SemesterData: 
+class SemesterData:
     def __init__(self):
         self.groups = []
         self.exams = []
@@ -53,7 +54,7 @@ class SemesterData:
 
     def add_lecturer(self, lecturer):
         self.lecturers.append(lecturer)
-    
+
     def add_exam(self, exam):
         self.exams.append(exam)
 
@@ -67,7 +68,7 @@ class SemesterData:
 
     def to_dict(self):
         return {
-            "groups": self.groups, 
-            "exams": self.exams, 
+            "groups": self.groups,
+            "exams": self.exams,
             "lecturers": self.lecturers
         }
