@@ -1,19 +1,10 @@
-from requests import get
 from bs4 import BeautifulSoup
+from requests import get
 
-from utils.models import (
-    LessonData,
-    SemesterData
-)
-from utils.constants import (
-    LESSON_INDICATORS,
-    MODULAR_CREDIT_HEADER,
-    SEMESTER_ONE,
-    SEMESTER_TWO,
-    COURSE_SCHEDULE_URL,
-    GROUP_HEADER,
-    EXAM_HEADER
-)
+from utils.constants import (COURSE_SCHEDULE_URL, EXAM_HEADER, GROUP_HEADER,
+                             LESSON_INDICATORS, MODULAR_CREDIT_HEADER,
+                             SEMESTER_ONE, SEMESTER_TWO)
+from utils.models import LessonData, SemesterData
 
 
 def is_not_lesson(elem):
