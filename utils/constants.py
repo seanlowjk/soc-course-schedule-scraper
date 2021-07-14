@@ -20,4 +20,4 @@ PORT = 'REDIS_PORT'
 DB = 'REDIS_DB'
 
 # Cache Values
-CACHE_TIMEOUT = 60
+CACHE_TIMEOUT = 3600 # 3600 Seconds 
