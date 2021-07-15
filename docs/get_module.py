@@ -9,7 +9,7 @@ SPECS_DICT = {
     ],
     "definitions": {
         "Module": {
-            "description": "Simplified module information for the academic year.",
+            "description": "General Module information for the academic year.",
             "type": "object",
             "required": ["module_code", "module_name", "modular_credits", "semesters"],
             "properties": {
@@ -36,7 +36,7 @@ SPECS_DICT = {
             }
         },
         "Semester": {
-            "description": "Simplified module information for the semester.",
+            "description": "Module information for the semester.",
             "type": "object",
             "required": ["groups", "exams", "lecturers"],
             "properties": {
@@ -63,7 +63,7 @@ SPECS_DICT = {
     },
     "responses": {
         "200": {
-            "description": "THe module information in this current academic year.",
+            "description": "Module information in this current academic year.",
         }
     }
 }
