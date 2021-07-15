@@ -1,5 +1,7 @@
 {
     "REDIS_HOST": "localhost", 
     "REDIS_PORT": 6379, 
-    "REDIS_DB": 0
+    "REDIS_DB": 0, 
+    "SWAGGER_HOST": "apps.seanlowjk.com",
+    "SWAGGER_PATH": "/soc_scraper"
 }

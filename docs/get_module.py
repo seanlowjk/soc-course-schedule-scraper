@@ -9,19 +9,19 @@ SPECS_DICT = {
     ],
     "definitions": {
         "Module": {
-            "description": "Simplified module information for the academic year.", 
+            "description": "Simplified module information for the academic year.",
             "type": "object",
-            "required": ["module_code", "module_name", "modular_credits","semesters"], 
+            "required": ["module_code", "module_name", "modular_credits", "semesters"],
             "properties": {
                 "module_code": {
                     "type": "string"
-                }, 
+                },
                 "module_name": {
                     "type": "string"
-                }, 
+                },
                 "modular_credits": {
                     "type": "string"
-                }, 
+                },
                 "semesters": {
                     "type": "object",
                     "properties": {
@@ -36,24 +36,24 @@ SPECS_DICT = {
             }
         },
         "Semester": {
-            "description": "Simplified module information for the semester.", 
+            "description": "Simplified module information for the semester.",
             "type": "object",
-            "required": ["groups", "exams", "lecturers"], 
+            "required": ["groups", "exams", "lecturers"],
             "properties": {
                 "groups": {
-                    "type": "array", 
+                    "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "exams": {
-                    "type": "array", 
+                    "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "lecturers": {
-                    "type": "array", 
+                    "type": "array",
                     "items": {
                         "type": "string"
                     }
